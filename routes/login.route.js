@@ -6,20 +6,19 @@ const r = Router();
 r.get("/", (req, res) =>
   res.json(new SuccessResponseObject("login path live 🚀"))
 );
-// Routing untuk login
-// app.post("/login", (req, res) => {
-//   const { username, password } = req.body;
 
-//   // Di sini Anda dapat menambahkan logika autentikasi pengguna.
-//   // Contoh sederhana:
-//   if (username === "user" && password === "password") {
-//     // Jika login berhasil, buat token JWT
-//     const token = jwt.sign({ username }, "secret_key"); // Ganti 'secret_key' dengan kunci rahasia yang lebih kuat
+// Rute untuk login (POST)
+r.post("/login", (req, res) => {
+  // Di sini Anda dapat menambahkan logika autentikasi pengguna.
+  // Contoh sederhana:
+  const { username, password } = req.body;
 
-//     // Kirim token sebagai respons
-//     res.json({ message: "Login berhasil", token });
-//   } else {
-//     res.status(401).json({ message: "Login gagal" });
-//   }
-// });
+  if (username === "user" && password === "password") {
+    // Jika login berhasil, Anda dapat mengirim respons sukses
+    res.json(new SuccessResponseObject("Login berhasil"));
+  } else {
+    // Jika login gagal, Anda dapat mengirim respons gagal
+    res.status(401).json(new ErrorResponseObject("Login gagal"));
+  }
+});
 module.exports = r;
