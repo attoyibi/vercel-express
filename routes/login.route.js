@@ -14,12 +14,12 @@ r.post("/", (req, res) => {
   const { username, password } = req.body;
   res.json(new SuccessResponseObject("login post path live 🚀"));
 
-  //   if (username === "user" && password === "password") {
-  //     // Jika login berhasil, Anda dapat mengirim respons sukses
-  //     res.json(new SuccessResponseObject("Login berhasil"));
-  //   } else {
-  //     // Jika login gagal, Anda dapat mengirim respons gagal
-  //     res.status(401).json(new ErrorResponseObject("Login gagal"));
-  //   }
+  if (username === "user" && password === "password") {
+    // Jika login berhasil, Anda dapat mengirim respons sukses
+    res.json(new SuccessResponseObject("Login berhasil"));
+  } else {
+    // Jika login gagal, Anda dapat mengirim respons gagal
+    res.status(401).json(new ErrorResponseObject("Login gagal"));
+  }
 });
 module.exports = r;
