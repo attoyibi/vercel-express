@@ -2,7 +2,7 @@ const express = require("express");
 const helmet = require("helmet");
 const { ErrorResponseObject } = require("./common/http");
 const routes = require("./routes");
-const jwt = require("jsonwebtoken"); // Import jsonwebtoken
+// const jwt = require("jsonwebtoken"); // Import jsonwebtoken
 
 const app = express();
 
@@ -19,7 +19,8 @@ app.post("/login", (req, res) => {
   // Contoh sederhana:
   if (username === "user" && password === "password") {
     // Jika login berhasil, buat token JWT
-    const token = jwt.sign({ username }, "secret_key"); // Ganti 'secret_key' dengan kunci rahasia yang lebih kuat
+    const token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"; // Ganti 'secret_key' dengan kunci rahasia yang lebih kuat
 
     // Kirim token sebagai respons
     res.json({ message: "Login berhasil", token });
