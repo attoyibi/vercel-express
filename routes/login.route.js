@@ -15,6 +15,6 @@ r.post("/", (req, res) => {
   const { username2 } = "req.body";
   //   res.json(new SuccessResponseObject("login post path live 🚀"));
   console.log(username);
-  res.json(new SuccessResponseObject(`value username = ${username2}`));
+  res.json(new SuccessResponseObject(`value username2 = ${username2}`));
 });
 module.exports = r;
