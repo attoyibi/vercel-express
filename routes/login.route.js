@@ -12,7 +12,7 @@ r.post("/", (req, res) => {
   // Di sini Anda dapat menambahkan logika autentikasi pengguna.
   // Contoh sederhana:
   const { username, password } = req.body;
-  res.json(new SuccessResponseObject("login post path live 🚀"));
+  //   res.json(new SuccessResponseObject("login post path live 🚀"));
 
   if (username === "user" && password === "password") {
     // Jika login berhasil, Anda dapat mengirim respons sukses
