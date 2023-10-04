@@ -11,13 +11,13 @@ r.get("/", (req, res) =>
 r.post("/", (req, res) => {
   // Di sini Anda dapat menambahkan logika autentikasi pengguna.
   // Contoh sederhana:
-  const { username, password } = req.body.toString();
-  const username2 = req.body;
+  const { username, password } = req.body;
+  const username2 = req.body.toString();
   //   res.json(new SuccessResponseObject("login post path live 🚀"));
   console.log(username);
   res.json(
     new SuccessResponseObject(
-      `value username req.body.username2String = ${username2}`
+      `value username req.body.username2String2 = ${username2}`
     )
   );
 });
